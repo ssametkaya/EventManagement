@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Event
+@{
+    ViewData["Title"] = "CreateEvent";
+}
+
+<h1>Etkinlik Oluştur</h1>
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description">Yeni Etkinlik</p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Etkinlik Adı</label>
+                    @Html.TextBoxFor(x => x.EventName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    @Html.TextBoxFor(x => x.Category.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Şehir</label>
+                    @Html.TextBoxFor(x => x.City.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Tarih</label>
+                    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Kapasite</label>
+                    @Html.TextBoxFor(x => x.Capacity, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Son Kayıt Tarihi</label>
+                    @Html.TextBoxFor(x => x.ClosedDate, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

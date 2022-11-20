@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<UserViewModel>
+
+<h1>Üye Listesi</h1>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad-Soyad</th>
+            <th>User Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NameSurname</td>
+                <td>@item.UserName</td>
+                <td>@item.Mail</td>
+            </tr>
+        }
+    </tbody>
+</table>

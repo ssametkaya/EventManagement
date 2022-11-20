@@ -1,0 +1,44 @@
+﻿@model List<EventViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Etkinlik Listesi</h1>
+
+<table class="table table-active">
+    <thead>
+        <tr>
+            <th>Etkinlik Adı</th>
+            <th>Şehir</th>
+            <th>Kategori</th>
+            <th>Kapasite</th>
+            <th>Tarih</th>
+            <th>Açıklama</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.City</td>
+                <td>@item.Category</td>
+                <td>@item.EventCapacity</td>
+                <td>@item.DateTime</td>
+                <td>@item.Description</td>
+                <td><a href="/Event/EventDetay/@item.ID">Detaylar</a></td>
+                <td><button class="btn btn-sm btn-success">Katılıyorum</button></td>
+            </tr>
+        }
+
+    </tbody>
+
+
+</table>
+
+<br />
+<a href="/Ticket/Index" class="btn btn-success">Bilet Al</a>
+

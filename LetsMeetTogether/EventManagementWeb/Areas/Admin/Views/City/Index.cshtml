@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<AdminCityViewModel>
+
+<h1>Şehirler</h1>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Şehir Adı</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.City</td>
+                <td><a class="btn btn-warning" href="/Admin/City/CityDetail/@item.ID">Düzenle</a></td>
+                <td><a class="btn btn-danger" href="/Admin/City/DeleteCity/@item.ID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a class="btn btn-info" href="/Admin/City/AddCity">Şehir Ekle</a>
+

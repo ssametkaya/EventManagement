@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Event
+@{
+    ViewData["Title"] = "EventDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Etkinlik Düzenle</h1>
+
+<br />
+@using (Html.BeginForm("EventDetail", "Events", FormMethod.Post))
+{
+
+    @Html.LabelFor(x =>x.EventID)
+    @Html.TextBoxFor(x =>x.EventID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.EventName)
+    @Html.TextBoxFor(x => x.EventName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Capacity)
+    @Html.TextBoxFor(x => x.Capacity, new { @class = "form-control" })
+    <br />
+    <p>Kategori</p>@Html.LabelFor(x => x.Category.Name)
+    @Html.TextBoxFor(x => x.Category.Name, new { @class = "form-control", })
+    <br />
+    <p>Şehir</p>@Html.LabelFor(x => x.City.Name)
+    @Html.TextBoxFor(x => x.City.Name,  new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ClosedDate)
+    @Html.TextBoxFor(x => x.ClosedDate,  new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    @Html.TextBoxFor(x => x.Date,  new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, 5,1,  new { @class = "form-control" })
+
+    <button class="btn btn-primary">Etkinlik Güncelle</button>
+
+
+}
+

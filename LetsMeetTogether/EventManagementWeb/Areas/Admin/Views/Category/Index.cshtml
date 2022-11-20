@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<AdminCategoryViewModel>
+
+<h1>Kategoriler</h1>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kategori Adı</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Category</td>
+                <td><a class="btn btn-warning" href="/Admin/Category/CategoryDetail/@item.ID">Düzenle</a></td>
+                <td><a class="btn btn-danger" href="/Admin/Category/DeleteCategory/@item.ID">Sil</a></td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a class="btn btn-info" href="/Admin/Category/AddCategory">Kategori Ekle</a>
+

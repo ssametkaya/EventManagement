@@ -1,0 +1,40 @@
+﻿@model List<EventViewModel>
+@{
+    ViewData["Title"] = "Events";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Etkinlikler</h1>
+<br />
+<table class="table table-active">
+    <thead>
+        <tr>
+            <th>Etkinlik Adı</th>
+            <th>Şehir</th>
+            <th>Kategori</th>
+            <th>Kapasite</th>
+            <th>Tarih</th>
+            <th>Açıklama</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.City</td>
+                <td>@item.Category</td>
+                <td>@item.EventCapacity</td>
+                <td>@item.DateTime</td>
+                <td>@item.Description</td>
+                <td><a class="btn btn-warning" href="/Admin/Event/EventDetail/@item.ID">Düzenle</a></td>
+                <td><a class="btn btn-danger" href="/Admin/Event/DeleteEvent/@item.ID">Sil</a></td>
+            </tr>
+        }
+
+    </tbody>
+
+
+</table>

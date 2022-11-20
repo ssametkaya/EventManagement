@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<title>Admin-Paneli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/EventManagement.styles.css" asp-append-version="true" />
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
+        <h3 class="w3-bar-item">Menüler</h3>
+        <a href="~/Admin/User/UserList" class="w3-bar-item w3-button">Kullanıcı Listesi</a>
+        <a href="~/Admin/Event/Events" class="w3-bar-item w3-button">Etkinlikler</a>
+        <a href="~/Admin/City/Index" class="w3-bar-item w3-button">Şehirler</a>
+        <a href="~/Admin/Category/Index" class="w3-bar-item w3-button">Kategoriler</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button">Siteye Git</a>
+        
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:10%">
+
+        <div class="w3-container w3-teal">
+            <h1>Admin Yönetim Paneli</h1>
+        </div>
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</body>
+</html>

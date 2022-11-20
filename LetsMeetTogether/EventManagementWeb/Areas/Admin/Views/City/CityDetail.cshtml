@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.City
+@{
+    ViewData["Title"] = "CityDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Şehir Düzenle</h1>
+
+@using (Html.BeginForm("CityDetail", "City", FormMethod.Post))
+{
+
+    @Html.LabelFor(x =>x.CityID)
+    @Html.TextBoxFor(x =>x.CityID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-primary">Şehir Güncelle</button>
+
+
+}
+
+
